@@ -23,17 +23,27 @@ public class JPATestService {
 
     @Transactional
     public void jpaUpdateTest(){
+
+        // ###
         Member member = new Member();
         member.setUsername("user1");
+        // 1 : N 단방향에서 , N 에해당하는 객체는 영속상태여야
+        // 그룹에해당하는 그룹을 참조하는 외래키 업데이트가가능
         em.persist(member);
-        //em.merge(member);
+
+        Member member2 = new Member();
+        member2.setUsername("user2");
+        em.persist(member2);
+        // ###
 
         MemberGroup memberGroup = new MemberGroup();
         List<Member> members = new ArrayList<>();
         members.add(member);
+        members.add(member2);
         memberGroup.setMembers(members);
         memberGroup.setName("group1");
-        em.persist(memberGroup);
+        em.merge(memberGroup);
+
     }
 
     @Transactional

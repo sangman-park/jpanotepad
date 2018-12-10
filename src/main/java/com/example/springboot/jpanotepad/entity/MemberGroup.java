@@ -9,7 +9,7 @@ public class MemberGroup {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name = "GROUP_ID")
+    @Column(name = "TEAM_ID")
     private Long id;
 
     private String name;

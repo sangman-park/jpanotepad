@@ -27,6 +27,7 @@ public class Member {
         this.username = username;
     }
 
+
     @Override
     public String toString() {
         return String.format(
