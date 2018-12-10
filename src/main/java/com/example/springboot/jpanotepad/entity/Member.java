@@ -26,4 +26,11 @@ public class Member {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "Member[id=%d, username='%s']",
+                id, username);
+    }
 }

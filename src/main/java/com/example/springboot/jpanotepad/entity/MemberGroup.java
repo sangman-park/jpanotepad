@@ -41,4 +41,12 @@ public class MemberGroup {
     public void setMembers(List<Member> members) {
         this.members = members;
     }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "MemberGroup[id=%d, name='%s', memlen=%d]",
+                id, name,members.size());
+    }
+
 }
