@@ -39,6 +39,12 @@ SQL statements can be used to check values, or to perform additional, native que
 - JPATestController.java: Rest it to be tested by Swagger
 - entity: Define an entity that you want to practice. The table is automatically generated at the next start-up.
 
+## Actuator : Monitor your ap
+- [http://localhost:8081/info](http://localhost:8081/info)
+
+![alt text](doc/healthchk.png)
+
+
 ## Config : application.properties
 
     # Based on the Java file defined in the entity, the table is automatically created every time the application is started (initialization)
