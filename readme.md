@@ -4,27 +4,35 @@ You can easily practice JPA with StandAlone
 
 JPA has been configured to make shoveling faster and faster.
 
-## setting
+## Setting
 - Import Project from InteliJ or Exist Open Source (Maven)
 - Wait until you get all the libraries automatically.
 - RUN and DEBUG can be activated automatically (automatic activation by detecting SPRING BOOT)
 - If not enabled, it can be executed manually with mvn spring-boot: run command
-- Basic drive to http: // localhost: 8080 /
+- Default Url -  [http://localhost:8080/](http://localhost:8080/)
 
 ## API TEST
 
 Create APIs in the controler to document and test the stack APIs
-url: http: // localhost: 8080 / swagger-ui.html
+
+url: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
+![alt text](doc/swagger.png)
 
 or
 
 DBTest through unit testing
+
+![alt text](doc/junit-jpa.png)
+
 
 ## H2 : Built-in Disk DB
 SQL statements can be used to check values, or to perform additional, native query exercises.
 
 - url : http://localhost:8080/h2
 - jdbc : jdbc:h2:~/spring-boot-h2-db
+
+![alt text](doc/h2console.png)
 
 ## Concept
 - JPATestService.java: You can test the EntityManager.
