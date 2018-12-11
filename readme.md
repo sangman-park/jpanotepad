@@ -1,45 +1,45 @@
 # JPA NOTEPAD
 
-JPA를 StandAlone으로 간편하게 연습할수 있으며
+You can easily practice JPA with StandAlone
 
-JPA의 삽질을 빠르고 짧은시간에 많이 할수 있게하기위해 구성되었습니다.
+JPA has been configured to make shoveling faster and faster.
 
-## 셋팅및 구동
-- InteliJ에서 Import Porject or Exist Open Source (메이븐)
-- 라이브러리를 자동으로 다 받을때까지 기다렸다가
-- RUN and DEBUG 자동활성화되어 실행가능 (SPRING BOOT을 감지하여 자동 활성화됨)
-- 활성화안되면 mvn spring-boot:run 명령어로 수동 실행가능
-- http://localhost:8080/ 에 기본구동
+## setting
+- Import Project from InteliJ or Exist Open Source (Maven)
+- Wait until you get all the libraries automatically.
+- RUN and DEBUG can be activated automatically (automatic activation by detecting SPRING BOOT)
+- If not enabled, it can be executed manually with mvn spring-boot: run command
+- Basic drive to http: // localhost: 8080 /
 
-## API 문서자동화및 테스트
+## API TEST
 
-controler에 API를 만들면 문서화되어 스웩 API 테스트 가능
-url : http://localhost:8080/swagger-ui.html
+Create APIs in the controler to document and test the stack APIs
+url: http: // localhost: 8080 / swagger-ui.html
 
-또는 
+or
 
-유닛테스트를 통한 DBTest
+DBTest through unit testing
 
-## H2 : 내장 Disk DB
-SQL문을 통해 값을 확인하거나, 추가적, 네이티브 쿼리 연습이 가능합니다.
+## H2 : Built-in Disk DB
+SQL statements can be used to check values, or to perform additional, native query exercises.
 
 - url : http://localhost:8080/h2
 - jdbc : jdbc:h2:~/spring-boot-h2-db
 
-## 주요파일
-- JPATestService.java : EntityManager 를 시험할수 있습니다.
-- JPATestController.java : Rest화 시켜 Swagger에서 테스트가 되게 하십시오
-- entity : 연습하고 싶은 Entity를 추가 정의합니다. 다음 구동시 테이블은 자동 생성됩니다.
+## Concept
+- JPATestService.java: You can test the EntityManager.
+- JPATestController.java: Rest it to be tested by Swagger
+- entity: Define an entity that you want to practice. The table is automatically generated at the next start-up.
 
-## 주요 옵션: application.properties
+## Config : application.properties
 
-    # entity에 정의된 자바 파일기반으로, 어플리케이션 구동시마다 테이블 자동 생성됩니다.(초기화)
-    spring.jpa.hibernate.ddl-auto=create
+    # Based on the Java file defined in the entity, the table is automatically created every time the application is started (initialization)
+    spring.jpa.hibernate.ddl-auto = create
     
-    # 디버그 로그창에 ORM이 호출하는 sql문을 볼수가 있습니다.
-    spring.jpa.show-sql=true
+    # You can see the SQL statements that ORM calls in the debug log window.
+    spring.jpa.show-sql = true
     
-    # SQL문을 실행하는 SQL 웹유틸을 실행할수 있습니다. 
-    spring.h2.console.path=/h2
-    spring.h2.console.enabled=true
+    # You can run the SQL Web utility to execute SQL statements.
+    spring.h2.console.path = / h2
+    spring.h2.console.enabled = true
     
