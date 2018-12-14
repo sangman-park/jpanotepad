@@ -10,8 +10,11 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 
 import javax.persistence.PersistenceContext;
+import javax.validation.constraints.Null;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class JPATestService {
@@ -38,11 +41,23 @@ public class JPATestService {
 
         MemberGroup memberGroup = new MemberGroup();
         List<Member> members = new ArrayList<>();
+
+        em.persist(memberGroup);
+
+
+        Set<Long> operatorIds = new HashSet<Long>();
+        operatorIds.add(1L);
+        operatorIds.add(3L);
+        memberGroup.setOperatorIds(operatorIds);
+
+
         members.add(member);
         members.add(member2);
         memberGroup.setMembers(members);
         memberGroup.setName("group1");
+
         em.merge(memberGroup);
+
 
     }
 

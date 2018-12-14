@@ -1,5 +1,7 @@
 package com.example.springboot.jpanotepad;
 
+import com.example.springboot.jpanotepad.entity.Customer;
+import com.example.springboot.jpanotepad.entity.Customer2;
 import com.example.springboot.jpanotepad.service.JPATestService;
 import org.junit.Assert;
 import org.junit.Test;
@@ -22,5 +24,7 @@ public class JpanotepadApplicationTests {
 		Assert.assertTrue(jpaTestService.findAll("Member").size() > 0);
 		Assert.assertTrue(jpaTestService.findAll("MemberGroup").size() > 0);
 	}
+
+
 
 }
