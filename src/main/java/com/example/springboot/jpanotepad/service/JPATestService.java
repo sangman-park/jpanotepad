@@ -10,6 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 
 import javax.persistence.PersistenceContext;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import javax.validation.constraints.Null;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -30,8 +33,7 @@ public class JPATestService {
         // ###
         Member member = new Member();
         member.setUsername("user1");
-        // 1 : N 단방향에서 , N 에해당하는 객체는 영속상태여야
-        // 그룹에해당하는 그룹을 참조하는 외래키 업데이트가가능
+        // 1 -> N : Unidirectional Test
         em.persist(member);
 
         Member member2 = new Member();
@@ -61,6 +63,7 @@ public class JPATestService {
 
     }
 
+    //JPQL
     @Transactional
     public List findAll(String tableName){
         List result = em.createQuery(String.format("SELECT t FROM %s t",tableName))
@@ -72,5 +75,33 @@ public class JPATestService {
 
         return result;
     }
+
+    //Criteria Query
+    @Transactional
+    public List findByNameFromMember(String username){
+        // scenario : subquery
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Member> query = cb.createQuery(Member.class);
+        Root<Member> m = query.from(Member.class);
+        CriteriaQuery<Member> cq = query.select(m).where(cb.equal(m.get("username"),username));
+        List resultList = em.createQuery(cq).getResultList();
+
+        return resultList;
+
+    }
+
+    //Query DSL
+    public List QueryDsl1() throws Exception {
+        /*
+        JPAQuery query = new JPAQuery(em);
+        QMember = member = Qmember.member;
+        List<Member> members =
+                query.from(member)
+                        .where(member.username.eq("Kim"))
+                        .list(member);
+        */
+        throw new Exception("preparing......");
+    }
+
 
 }

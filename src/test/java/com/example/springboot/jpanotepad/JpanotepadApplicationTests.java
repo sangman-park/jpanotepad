@@ -23,6 +23,8 @@ public class JpanotepadApplicationTests {
 		//Check
 		Assert.assertTrue(jpaTestService.findAll("Member").size() > 0);
 		Assert.assertTrue(jpaTestService.findAll("MemberGroup").size() > 0);
+        Assert.assertTrue(jpaTestService.findByNameFromMember("user1").size() >0);
+
 	}
 
 
