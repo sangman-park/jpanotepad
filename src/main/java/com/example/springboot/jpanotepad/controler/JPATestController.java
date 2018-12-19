@@ -1,18 +1,13 @@
 package com.example.springboot.jpanotepad.controler;
 
 import com.example.springboot.jpanotepad.entity.Customer;
-import com.example.springboot.jpanotepad.entity.CustomerRepository;
-import com.example.springboot.jpanotepad.entity.Member;
-import com.example.springboot.jpanotepad.entity.MemberGroup;
+import com.example.springboot.jpanotepad.repository.CustomerRepository;
 import com.example.springboot.jpanotepad.service.JPATestService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.List;
 

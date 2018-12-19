@@ -1,8 +1,9 @@
-package com.example.springboot.jpanotepad.entity;
+package com.example.springboot.jpanotepad.repository;
+
+import com.example.springboot.jpanotepad.entity.Customer;
+import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
-
-import org.springframework.data.repository.CrudRepository;
 
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
 
