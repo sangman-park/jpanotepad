@@ -2,7 +2,9 @@ package com.example.springboot.jpanotepad;
 
 import com.example.springboot.jpanotepad.entity.Customer;
 import com.example.springboot.jpanotepad.entity.Customer2;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -10,6 +12,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class POJOTests {
+
+    @Rule
+    public final ExpectedException exception = ExpectedException.none();
 
     // Test for Pure Old Java Object
 
@@ -38,8 +43,9 @@ public class POJOTests {
         System.out.println(test3);
 
         // Access Properti Test : Expected : java.lang.NullPointerException
-        //String test4 = String.format("%s",noOverider.getFirstName());
-        //System.out.println(test3);
+        exception.expect(NullPointerException.class);
+        String test4 = String.format("%s",noOverider.getFirstName());
+
 
     }
 }
