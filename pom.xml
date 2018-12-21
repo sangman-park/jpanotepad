@@ -16,10 +16,13 @@
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<powermock.version>1.7.0</powermock.version>
 		<hamcrest.version>2.0.0.0</hamcrest.version>
 		<commons-lang3.version>3.5</commons-lang3.version>
+		<akka.version>2.5.19</akka.version>
 	</properties>
 
 	<dependencies>
@@ -37,6 +40,23 @@
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
+		<!-- akka -->
+
+		<dependency>
+			<groupId>com.typesafe.akka</groupId>
+			<artifactId>akka-actor_2.11</artifactId>
+			<version>${akka.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.typesafe.akka</groupId>
+			<artifactId>akka-persistence_2.11</artifactId>
+			<version>${akka.version}</version>
+		</dependency>
+
+
+		<!-- utils -->
 
 		<dependency>
 			<groupId>io.springfox</groupId>
@@ -56,8 +76,6 @@
 		</dependency>
 
 
-		<!-- utils -->
-
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
@@ -75,6 +93,13 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.typesafe.akka</groupId>
+			<artifactId>akka-testkit_2.11</artifactId>
+			<version>${akka.version}</version>
 			<scope>test</scope>
 		</dependency>
 
