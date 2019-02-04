@@ -38,4 +38,16 @@ public class Aggregate {
     public Collection<DomainEvent> events() {
         return domainEvents;
     }
+
+    public Collection<DomainEvent> getDomainEvents() {
+        return domainEvents;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 }
